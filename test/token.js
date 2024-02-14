@@ -15,4 +15,27 @@ describe("Token contract", function () {
 
     expect(await hardhatToken.totalSupply()).to.equal(ownerBalance); // total supply = 10000
   });
+
+  it("Should transfer tokens between accounts", async function () {
+    const [owner, address1, address2] = await ethers.getSigners();
+
+    const Token = await ethers.getContractFactory("Token");
+
+    const hardhatToken = await Token.deploy();
+
+    // transfer 10 tokens from owner to address 1
+
+    await hardhatToken.transfer(address1.address, 10);
+
+    expect((await hardhatToken.balanceOf(address1.address)) === 10);
+
+    // transfer 5 tokens from address 1 to address 2
+
+    await hardhatToken.connect(address1).transfer(address2.address, 5);
+
+    expect(
+      (await hardhatToken.balanceOf(address2.address)) === 5 &&
+        (await hardhatToken.balanceOf(address1.address)) === 5
+    );
+  });
 });
