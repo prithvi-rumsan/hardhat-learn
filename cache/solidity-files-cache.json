@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "C:\\Users\\Prithvi\\Documents\\Rumsan\\Personal Projects\\hardhat\\contracts\\Token.sol": {
-      "lastModificationDate": 1707931389256,
-      "contentHash": "d12edf82e945c32e6f1ae03f4fef2afd",
+      "lastModificationDate": 1708015603774,
+      "contentHash": "1f23a82d37e68ddd19c323ad00d17e07",
       "sourceName": "contracts/Token.sol",
       "solcConfig": {
         "version": "0.8.9",
